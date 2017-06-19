@@ -1,0 +1,36 @@
+{% extends 'main_page/static_templates/main_page_carcass.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="panel panel-default create-article">
+        <div class="panel-heading">
+            <h2>Редактор новостей</h2>
+        </div>
+        <div class="panel-body">
+            <form action="" method="post" novalidate enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="create-title">
+                    <h4>Заголовок</h4>
+                    {{ article_form.title }}
+                </div>
+                <br>
+                <div class="create-text">
+                    <h4>Текст</h4>
+                    {{ article_form.text }}
+                </div>
+                <br>
+                <h4>Список тэгов</h4>
+                    {{ tag_form.tag_list }}
+                <br>
+                <div class="get_image">
+                    <h4>Изображение</h4>
+                    {{ image_form.image }}
+                </div>
+            <br>
+                <button type="submit" class="btn btn-primary btn-md" >Сохранить</button>
+            </form>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="{% static 'js/tiny-mse.js' %}"></script>
+{% endblock %}

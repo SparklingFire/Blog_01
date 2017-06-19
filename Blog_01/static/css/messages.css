@@ -1,0 +1,73 @@
+.message-list-header-buttons li{
+    display: inline-block;
+    padding: 8px;
+    font-weight: 700;
+}
+
+.message-list-header-buttons li:hover{
+}
+
+.messages-list{
+    position: relative;
+    height: 650px;
+}
+
+.messages-list-message{
+    position: relative;
+}
+
+.messages-list-message{
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: solid 1px #e6e6e6;
+}
+
+.messages-list-message:hover{
+    cursor: pointer;
+}
+
+.messages-list-message-created{
+    position: absolute;
+    right: 35px;
+    top: 15px;
+    font-size: 13px;
+}
+
+.messages-list-message-text{
+    margin-left: 100px;
+}
+
+.messages-list-message-text-text{
+    color: #717171;
+    font-size: 13px;
+}
+
+.messages-list-message-user-info{
+    margin-left: 20px;
+}
+
+.pagination .pager{
+    display: inline;
+}
+
+.message-list-message-username{
+    margin-left: 5px;
+}
+
+.pagination{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+.pagination>li>a, .pagination>lispan{
+    border: none;
+    color: #1a1a1a;
+}
+
+.pagination>li>a:hover, .pagination>li>a:active:hover, .pagination>li>a:focus{
+    color: #cc181e;
+    background-color: white;
+}

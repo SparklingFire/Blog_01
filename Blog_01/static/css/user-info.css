@@ -1,0 +1,49 @@
+.modal-dialog{
+    margin-top: 200px;
+}
+
+#password-change .modal-content,
+#login-modal .modal-content,
+#registration-modal .modal-content,
+#send-message .modal-content{
+    background-color: white;
+    border-radius: 5px;
+    width: 70%;
+}
+
+.password-change-title{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.password-change-border, .password-change-border-footer{
+    margin-right: 20px;
+    margin-left: 20px;
+    border: 1px solid #e6e6e6;
+    margin-top: 10px;
+}
+
+.password-change-border-footer{
+    margin-right: 40px;
+    margin-left: 40px;
+}
+
+.modal-footer, .password-change-border,.password-change-border-footer{
+    border-top: none;
+}
+
+.password-reset-form, .login-form{
+    margin-top: 20px;
+}
+
+.password-reset-form input, .login-form input, .registration-form input, .send-message-form input, .send-message-form textarea{
+    border-radius: 5px;
+    border: 1px solid #e6e6e6;
+    padding: 5px;
+    display: list-item;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 90%;
+    max-width: 90%;
+}

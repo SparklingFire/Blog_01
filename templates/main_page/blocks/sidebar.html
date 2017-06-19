@@ -1,0 +1,43 @@
+<div class="col-lg-12 col-sm-6 col-md-12" xmlns="http://www.w3.org/1999/html">
+    <div class="prop-article">
+        <button type="button" class="btn btn-primary">предложить новость</button>
+    </div>
+    <div class="recent-comments">
+        <div class="recent-comments-heading">Последние комментарии</div>
+        {% for comment in RECENT_COMMENTS %}
+            <div class="comment-info">
+                <img src="{{ comment.author.get_avatar }}" style="height: 32px" class="img-circle"> {{ comment.author }} {{ comment.created }}
+            </div>
+            <div class="comment-pretext">
+                {{ comment.text }}
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="popular-posts" style="margin-top: 40px">
+        <div class="popular-article-heading">
+            Популярные топики
+        </div>
+        {% for article in POPULAR_ARTICLES %}
+            <a href="/article/{{ article.pk }}">
+                <div class="popular-article-title">{{ article.title }}</div>
+                <div class="popular-article-info">
+                    Просмотры: {{ article.get_hits }} Комментарии: {{ article.comment_set.all.count }}
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="col-lg-12">
+    <div class="tags" style="margin-top: 40px">
+        <div class="tags-title">
+            Тэги
+        </div>
+        <div class="tag-list">
+            {% for tag in TAGS %}
+                <button type="button" class="btn btn-primary btn-sm tag" onclick="location.href='/filter/tag/{{ tag.tag }}'">{{ tag.tag }}</button>
+            {% endfor %}
+        </div>
+    </div>
+</div>

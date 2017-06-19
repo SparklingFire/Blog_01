@@ -1,0 +1,72 @@
+{% extends 'main_page/static_templates/main_page_carcass.html' %}
+
+{% block content %}
+    <div class="messages-list">
+        <div class="text-center">
+            <ul class="message-list-header-buttons">
+                <li>
+                    <a href="/message_list/all">
+                        все сообщения
+                    </a>
+                    <div class="message-list-header-buttons-border" hidden></div>
+                </li>
+                <li>
+                    <a href="/message_list/all">
+                        входящие
+                    </a>
+                </li>
+                <li>
+                    <a href="/message_list/all">
+                        исходящие
+                    </a>
+                </li>
+            </ul>
+        </div>
+        {% if object_list.count == 0 %}
+            <div class="messages-empty-title">
+                список сообщений пуст
+            </div>
+        {% else %}
+            {% for message in object_list %}
+                <div class="messages-list-message">
+                    <span class="messages-list-message-user-info">
+                        <img src="{{ message.sender_message_list.user.get_avatar }}" class="img-circle" height="32px">
+                        <span class="messages-list-message-username">
+                            {{ message.sender_message_list.user }}
+                        </span>
+                    </span>
+                    <span class="messages-list-message-text">
+                        <span class="messages-list-message-text-title">
+                            {{ message.title}}
+                        </span>
+                        <span class="messages-list-message-text-text">
+                            {{ message.text }}
+                        </span>
+                    </span>
+                    <span class="messages-list-message-created">
+                        {{ message.created }}
+                    </span>
+                </div>
+            {% endfor %}
+        {% endif %}
+        {% if is_paginated %}
+            <ul class="pagination">
+                    <li data-page="">
+                        <a href="/message_list/all/?page=">
+                            <
+                        </a>
+                    </li>
+                {% for page in paginator.page_range %}
+                    <li data-page="{{ page }}">
+                        <a href="?page={{ page }}">{{ page }}</a>
+                    </li>
+                {% endfor %}
+                    <li data-page="">
+                        <a href="/message_list/all/?page=">
+                            >
+                        </a>
+                    </li>
+            </ul>
+        {% endif %}
+    </div>
+{% endblock %}
